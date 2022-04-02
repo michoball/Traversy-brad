@@ -1,17 +1,20 @@
 const express = require("express");
-const path = require("path");
-const colors = require("colors");
 const dotenv = require("dotenv").config();
+
+const path = require("path");
+
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
 const PORT = process.env.PORT || 5000;
-
+const colors = require("colors");
 //Connect to database
 connectDB();
 
 const app = express();
 
+// 데이터 통신 body로 json을 쓰겠다는 미들웨어
 app.use(express.json());
+//urlencoded 를 사용하기 위해서 쓴 거
 app.use(express.urlencoded({ extended: false }));
 
 //Routes

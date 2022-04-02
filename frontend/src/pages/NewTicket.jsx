@@ -26,11 +26,11 @@ function NewTicket() {
     }
 
     if (isSuccess) {
-      dispatch(reset);
+      dispatch(reset());
       navigate("/tickets");
     }
 
-    dispatch(reset);
+    dispatch(reset());
   }, [dispatch, isError, isSuccess, navigate, message]);
 
   const onSubmit = (e) => {
