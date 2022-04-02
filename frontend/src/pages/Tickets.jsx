@@ -26,6 +26,7 @@ function Tickets() {
   if (isLoading) {
     return <Spinner />;
   }
+  console.log(tickets);
 
   return (
     <>
@@ -38,9 +39,13 @@ function Tickets() {
           <div>status</div>
           <div></div>
         </div>
-        {tickets.map((ticket) => (
-          <TicketItem key={ticket._id} ticket={ticket} />
-        ))}
+        {tickets.length === 0 ? (
+          <p>There is no tickets</p>
+        ) : (
+          tickets.map((ticket) => (
+            <TicketItem key={ticket._id} ticket={ticket} />
+          ))
+        )}
       </div>
     </>
   );
