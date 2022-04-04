@@ -17,7 +17,7 @@ app.use(express.json());
 //urlencoded 를 사용하기 위해서 쓴 거
 app.use(express.urlencoded({ extended: false }));
 
-//Routes
+//Routesnoe
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/tickets", require("./routes/ticketRoutes"));
 
